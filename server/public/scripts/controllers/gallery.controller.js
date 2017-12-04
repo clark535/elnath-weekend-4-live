@@ -6,6 +6,7 @@ app.controller('GalleryController', function(){
 
     self.cards = [];
 
+
     createCards();
 
     self.toggleDescription = function(card) {
@@ -25,7 +26,7 @@ app.controller('GalleryController', function(){
         this.showDescription = false;
     }
 
-    self.addLike = function() {
+    self.addLike = function(card) {
         card.likes ++;
 
     }
