@@ -12,10 +12,10 @@ app.controller('GalleryController', function(){
         card.showDescription = !card.showDescription;
     }
 
-     self.createCards = function() {
-        self.cards.push(new Card('Jupiter_europa.jpg', 'Isnt this planet great!'),
-    ('Castle.jpg', 'Cool castle bro!'));
-    }
+     function createCards()  {
+        self.cards.push(new Card('Jupiter_europa.jpg', 'Isnt this planet great!')),
+        self.cards.push(new Card('Castle.jpg', 'Cool castle bro!'))
+    };
         
 
     function Card(path, description) {
@@ -26,6 +26,7 @@ app.controller('GalleryController', function(){
     }
 
     self.addLike = function() {
-        
+        card.likes ++;
+
     }
 });

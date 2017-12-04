@@ -17,8 +17,7 @@
     <div class="containter">
         <div class="row">
         <div class="col-md-4" ng-repeat="card in vm.cards track by $index">
-            <img ng-src="images/{{card.path}}" 
-            ng-click="vm.toggleDescription(card)">
+            <img ng-src="images/{{card.path}}" ng-click="vm.toggleDescription(card)">
 
             <p ng-if="card.showDescription">{{card.description}}</p>
             <button class="btn btn-primary" ng-click="vm.addLike(card)">Likes : {{card.likes}}</button>
