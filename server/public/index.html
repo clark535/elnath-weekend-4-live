@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./vendors/bootstrap.min.css" rel="stylesheet">
+    <link href="./vendors/styles.css" rel="stylesheet">
+    <script src="./scripts/angular.min.js"></script>
+    <script src="./scripts/client.js"></script>
+    <script src="./scripts/controllers/gallery.controller.js"></script>
+    
+    <title>Weekend 4 walk-through</title>
+</head>
+<body ng-app="myApp" ng-controller="GalleryController as vm">
+    <h1>{{vm.greeting}}</h1>
+    <div class="containter">
+        <div class="row">
+        <div class="col-md-4" ng-repeat="card in vm.cards track by $index">
+            <img ng-src="images/{{card.path}}" 
+            ng-click="vm.toggleDescription(card)">
+
+            <p ng-if="card.showDescription">{{card.description}}</p>
+            <button class="btn btn-primary" ng-click="vm.addLike(card)">Likes : {{card.likes}}</button>
+        </div>
+        </div>
+    </div>
+    
+</body>
+</html>
